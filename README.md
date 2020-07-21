@@ -1,30 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Hendrasadewa.site is a personal blog of hendra 'hare' sadewa.
 
-## Getting Started
 
-First, run the development server:
+## Tech Stacks
+- React
+- Next 
+- Styled-components
+- Styled-system
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Main Features
+Hendrasadewa.site contains these main features:
+- blogging via /blog
+- events rsvp via /events
+- portfolio via /portfolio
+- personal CV /about
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+## Blogging
+This feature is using markdown + JSX to render html contents.
 
-To learn more about Next.js, take a look at the following resources:
+- Categories - /blog/categories/
+Visitor can view five latest posts by categories
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Search - /blog/search/
+Visitor can search with keyword to get desired articles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Article - /blog/posts/[title-of-blog-YYYY-MM-DD]
+Visitor can view article via title of article or article id
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Events
+This feature shows future planned events, and visitor could rsvp via email.
+The event content will be provided by Markdown, and the rsvp form will be created on different component.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Recent - /event/
+Visitors could see ten recent events.
+
+- View Event - /event/[name-of-event]
+Visitors could view the event content and rsvp.
+
+
+## Portfolio
+this feature will be shown as gallery of hendra sadewa's projects
+
+- Portfolio - /portfolio
+Visitor could see 5 latest projects
+
+- Portfolio details - /portfolio/[title-of-project]
+Visitor could see the details and photos of portfolio.
+
+
+## Personal CV
+Content provided by markdown.
+
+- About - /about
+  Visitor could see the CV of hendra sadewa, including recent work experience, educations, achievements, etc.
