@@ -7,6 +7,7 @@ export type Typography = {
   font: {
     primary: Font;
     secondary: Font;
+    monospace: Font;
   };
   sizes: {
     heading: Array<number>;
@@ -21,21 +22,27 @@ export type Typography = {
 const typography: Typography = {
   font: {
     secondary: {
-      src: "font-family: 'Karla', sans-serif;",
+      src: "'Karla', sans-serif;",
       weights: [400, 700],
     },
     primary: {
-      src: "font-family: 'Inter', sans-serif;",
+      src: "'Inter', sans-serif;",
       weights: [200, 300, 400, 500, 700, 800],
     },
+    monospace: {
+      src: "'IBM Plex Mono', monospace;",
+      weights: [300, 400, 600, 700],
+    },
   },
+
   sizes: {
-    heading: [56, 48, 40, 32, 24, 20],
-    body: [20, 18, 16, 14],
+    heading: [24, 32, 40, 48, 56, 64],
+    body: [14, 16, 18, 20, 24],
   },
+
   lineHeights: {
-    heading: [61.6, 52.8, 44, 35.2, 26.4, 22],
-    body: [28, 25.2, 22.4, 19.6],
+    heading: [22, 26.4, 35.2, 44, 52.8, 61.6],
+    body: [19.6, 22.4, 25.2, 28],
   },
 };
 
