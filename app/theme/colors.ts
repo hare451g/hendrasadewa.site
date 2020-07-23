@@ -41,7 +41,7 @@ export interface BrandColors {
 }
 
 export interface ThemeColors {
-  background: { body: string };
+  background: { body: string; border: string };
   text: { body: string; muted: string };
   brand: BrandColors;
   states: ColorStates;
@@ -162,6 +162,7 @@ export const brandColors: BrandColors = {
 export const lightColors: ThemeColors = {
   background: {
     body: colors.silver[100],
+    border: colors.silver[300],
   },
   text: {
     body: colors.black[700],
@@ -174,6 +175,7 @@ export const lightColors: ThemeColors = {
 export const darkColors: ThemeColors = {
   background: {
     body: colors.black[700],
+    border: colors.silver[300],
   },
 
   text: {

@@ -31,7 +31,7 @@ const typography: Typography = {
   },
 
   sizes: {
-    heading: [24, 32, 40, 48, 56],
+    heading: [24, 32, 40, 48, 56, 64],
     body: [14, 16, 18, 20, 24],
   },
 
