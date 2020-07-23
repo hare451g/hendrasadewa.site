@@ -7,6 +7,7 @@ export type Typography = {
   font: {
     primary: Font;
     secondary: Font;
+    monospace: Font;
   };
   sizes: {
     heading: Array<number>;
@@ -27,6 +28,10 @@ const typography: Typography = {
     primary: {
       src: "'Inter', sans-serif;",
       weights: [200, 300, 400, 500, 700, 800],
+    },
+    monospace: {
+      src: "'IBM Plex Mono', monospace;",
+      weights: [300, 400, 600, 700],
     },
   },
 
