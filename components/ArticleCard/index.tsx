@@ -1,4 +1,9 @@
-import { Card, Body, Title, Descriptions, Image } from './styled';
+// styled components
+import Card from './Card';
+import Body from './Body';
+import Title from './Title';
+import Descriptions from './Descriptions';
+import Image from './Image';
 
 type ArticleCardProps = {
   slug: string;

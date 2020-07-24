@@ -1,13 +1,13 @@
 import React from 'react';
-import {
-  Descriptions,
-  HeroImage,
-  HeroImageLabel,
-  PublishedLabel,
-  Title,
-  Wrapper,
-} from './styled';
 import Link from 'next/link';
+
+// styled components
+import Descriptions from './Descriptions';
+import HeroImage from './HeroImage';
+import HeroImageLabel from './HeroImageLabel';
+import PublishedLabel from './PublishedLabel';
+import Title from './Title';
+import Wrapper from './Wrapper';
 
 type ArticleProps = {
   title: string;
@@ -39,3 +39,5 @@ const Article: React.SFC<ArticleProps> = ({
     <Wrapper>lorem</Wrapper>
   </>
 );
+
+export default Article;
