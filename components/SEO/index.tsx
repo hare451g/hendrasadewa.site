@@ -15,7 +15,7 @@ const SEO: React.SFC<SEOProps> = ({
   descriptions = meta.site_info.descriptions,
   url = meta.site_info.url,
   image = '/img/logo.svg',
-  keywords = [],
+  keywords = meta.site_info.keywords,
 }) => (
   <Head>
     <title>{title}</title>

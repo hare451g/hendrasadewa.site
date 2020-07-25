@@ -1,8 +1,20 @@
 {
   "site_info": {
     "url": "https://hendrasadewa.site",
-    "title": "Hendra Sadewa | Software Engineer | Personal Blog",
-    "descriptions": "Personal blog of Hendra Sadewa",
+    "title": "Personal Blog of Hendra Sadewa - Front-end Engineer",
+    "descriptions": "Hendra Sadewa is a front-end engineer at stockbit, formerly at Hara. Will talk a lot about javascript, software engineering, building User Interfaces, and open source project",
+    "keywords": [
+      "javascript",
+      "front-end",
+      "front-end engineer",
+      "software",
+      "opensource",
+      "OSS",
+      "react js",
+      "indonesia",
+      "indonesian programmer",
+      "hendra sadewa"
+    ],
     "locales": {
       "primary": "id_ID",
       "alt": ["en_US", "ms_MY"]
