@@ -29,30 +29,33 @@ enum colors {
   darkGray6 = 'rgb(28,28,30)',
 }
 
-type ColorKeys = keyof typeof colors;
+export type ColorKeys = keyof typeof colors;
+export type ColorValueType = typeof colors[ColorKeys];
 
 export type ThemeColors = {
   all: typeof colors;
   background: {
-    body: typeof colors[ColorKeys];
-    border: typeof colors[ColorKeys];
+    body: ColorValueType;
+    border: ColorValueType;
   };
   text: {
-    body: typeof colors[ColorKeys];
-    muted: typeof colors[ColorKeys];
-    light: typeof colors[ColorKeys];
+    body: ColorValueType;
+    muted: ColorValueType;
+    light: ColorValueType;
   };
   brand: {
-    primary: typeof colors[ColorKeys];
-    secondary: typeof colors[ColorKeys];
+    primary: ColorValueType;
+    secondary: ColorValueType;
   };
   states: {
-    danger: typeof colors[ColorKeys];
-    warning: typeof colors[ColorKeys];
-    success: typeof colors[ColorKeys];
-    info: typeof colors[ColorKeys];
+    danger: ColorValueType;
+    warning: ColorValueType;
+    success: ColorValueType;
+    info: ColorValueType;
   };
 };
+
+export type ThemeColorsKeys = keyof ThemeColors;
 
 export const lightColors: ThemeColors = {
   all: colors,

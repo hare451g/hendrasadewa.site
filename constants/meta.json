@@ -1,0 +1,72 @@
+{
+  "site_info": {
+    "url": "https://hendrasadewa.site",
+    "title": "Hendra Sadewa | Software Engineer | Personal Blog",
+    "descriptions": "Personal blog of Hendra Sadewa",
+    "locales": {
+      "primary": "id_ID",
+      "alt": ["en_US", "ms_MY"]
+    }
+  },
+  "identity": {
+    "first_name": "Hendra",
+    "last_name": "Sadewa",
+    "nickname": "hare",
+    "tagline": "Front-end Developer | Tech enthusiast | Minimalist"
+  },
+  "contacts": {
+    "mail": "hendrasadewa30@gmail.com"
+  },
+  "social_media": {
+    "github": "hare451g",
+    "github_url": "https://github.com/hare451g/",
+    "twitter": "sadevva_",
+    "twitter_url": "https://twitter.com/sadevva_",
+    "instagram": "sadevva_",
+    "instagram_url": "https://www.instagram.com/sadevva_/",
+    "dev": "hndrasdw",
+    "dev_url": "https://dev.to/hndrasdw",
+    "facebook": "hendra.sadewa.16",
+    "facebook_url": "https://www.facebook.com/hendra.sadewa.16"
+  },
+  "experiences": {
+    "current": {
+      "role": "Front-end Developer",
+      "company": "Stockbit",
+      "date_joined": "2020-06-02",
+      "date_depature": null
+    },
+    "past": [
+      {
+        "role": "Front-end Developer",
+        "company": "Hara / Dattabot",
+        "date_joined": "2018-05-01",
+        "date_depature": "2020-05-01"
+      },
+      {
+        "role": "Fullstack Developer",
+        "company": "AN-TAR / Lyto",
+        "date_joined": "2017-06-01",
+        "date_depature": "2018-05-01"
+      },
+      {
+        "role": "Web Developer",
+        "company": "Lyto",
+        "date_joined": "2017-03-01",
+        "date_depature": "2017-06-01"
+      },
+      {
+        "role": "Software Engineer",
+        "company": "Telkom DDS - Mediatron",
+        "date_joined": "2016-10-01",
+        "date_depature": "2017-03-01"
+      },
+      {
+        "role": "Lab Assistant",
+        "company": "Universitas Gunadarma - IT Laboratory",
+        "date_joined": "2014-04-01",
+        "date_depature": "2016-09-01"
+      }
+    ]
+  }
+}

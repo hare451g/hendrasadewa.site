@@ -1,8 +1,8 @@
 import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
-import GlobalStyles from '../app/shared/GlobalStyles';
-import { lightTheme } from '../app/theme';
+import GlobalStyles from '../shared/GlobalStyles';
+import { lightTheme } from '../theme';
 
 export default class MyApp extends App {
   render() {

@@ -1,13 +1,26 @@
-import Button from '../shared/Button';
-import Flex from '../shared/Flex';
+import { GetStaticProps } from 'next';
 
-export default function Home() {
+import IdentityCard from '../components/IdentityCard';
+import Flex from '../shared/Flex';
+import SEO from '../components/SEO';
+
+export default function Home({ title }) {
   return (
-    <Flex flexDirection="column">
-      Hello
-      <Button variant="outlined" color="primary">
-        click me
-      </Button>
-    </Flex>
+    <>
+      <SEO />
+      <Flex>
+        <IdentityCard />
+      </Flex>
+    </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const meta = await import('../constants/meta.json');
+
+  return {
+    props: {
+      title: meta.site_info.title,
+    },
+  };
+};
