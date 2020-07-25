@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { SpaceProps, space } from 'styled-system';
 
 enum avatarSizes {
   sm = '32px',
@@ -13,7 +14,7 @@ enum borderRadius {
   square = '0%',
 }
 
-type AvatarProps = {
+type AvatarProps = SpaceProps & {
   size?: keyof typeof avatarSizes;
   type?: keyof typeof borderRadius;
 };
@@ -24,6 +25,7 @@ const Avatar = styled.img<AvatarProps>(
     width: ${avatarSizes[size]};
     border-radius: ${borderRadius[type]};
     object-fit: cover;
+    ${space}
   `
 );
 

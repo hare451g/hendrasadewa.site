@@ -1,49 +1,23 @@
-type Font = {
-  src: string;
-  weights: Array<number>;
-};
+enum fontFamily {
+  primary = "'Inter', sans-serif;",
+  monospace = "'IBM Plex Mono', monospace;",
+  body = "'Karla', sans-serif;",
+}
 
 export type Typography = {
-  font: {
-    primary: Font;
-    secondary: Font;
-    monospace: Font;
-  };
-  sizes: {
-    heading: Array<number>;
-    body: Array<number>;
-  };
-  lineHeights: {
-    heading: Array<number>;
-    body: Array<number>;
-  };
+  fontFamily: typeof fontFamily;
+  fontWeight: Array<number>;
+  fontSize: Array<number>;
 };
 
-const typography: Typography = {
-  font: {
-    secondary: {
-      src: "'Karla', sans-serif;",
-      weights: [400, 700],
-    },
-    primary: {
-      src: "'Inter', sans-serif;",
-      weights: [200, 300, 400, 500, 700, 800],
-    },
-    monospace: {
-      src: "'IBM Plex Mono', monospace;",
-      weights: [300, 400, 600, 700],
-    },
+const typography = {
+  fontFamily: {
+    primary: fontFamily.primary,
+    monospace: fontFamily.monospace,
+    body: fontFamily.body,
   },
-
-  sizes: {
-    heading: [24, 32, 40, 48, 56, 64],
-    body: [14, 16, 18, 20, 24],
-  },
-
-  lineHeights: {
-    heading: [22, 26.4, 35.2, 44, 52.8, 61.6],
-    body: [19.6, 22.4, 25.2, 28],
-  },
+  fontWeight: [100, 200, 300, 400, 500, 600, 700, 800],
+  fontSize: [12, 14, 16, 18, 20, 24, 32, 40, 42, 48, 64, 72],
 };
 
 export default typography;

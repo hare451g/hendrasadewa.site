@@ -6,13 +6,15 @@ import meta from '../../constants/meta.json';
 
 function IdentityCard() {
   return (
-    <Flex alignItems="center" maxWidth="768px" margin="auto">
+    <Flex flexDirection="row" alignItems="center">
       <Avatar src="/img/me.jpg" size="lg" alt="Hendra Sadewa Avatar" />
-      <Flex flexDirection="column" margin="0 0 0 18px">
-        <Text fontFamily="primary" fontWeight="bold" fontSize={36}>
+      <Flex flexDirection="column" ml="16px">
+        <Text fontFamily="Inter" fontWeight="bold" fontSize="2rem">
           {meta.identity.first_name} {meta.identity.last_name}
         </Text>
-        <Text>{meta.identity.tagline}</Text>
+        <Text fontFamily="Inter" fontWeight={400}>
+          {meta.identity.tagline}
+        </Text>
       </Flex>
     </Flex>
   );

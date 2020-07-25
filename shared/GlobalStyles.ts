@@ -1,16 +1,23 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+  
   :root {
-    ${({ theme: { colors, typography } }) => css`
-      font-family: ${typography.font.primary.src};
-      font-weight: ${typography.font.primary.weights[1]};
-      font-size: ${typography.sizes.body[3]};
+    ${({
+      theme: {
+        colors,
+        typography: { fontFamily },
+      },
+    }) => css`
+      font-family: ${fontFamily.primary};
+      font-weight: normal;
+      font-size: 16px;
       color: ${colors.text.body};
-
       padding: 0px;
       margin: 0px;
-      box-sizing: border-box;
       background: ${colors.background.body};
     `}
   }

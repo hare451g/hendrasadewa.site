@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Body = styled.div(
   ({ theme: { space } }) => css`
