@@ -1,14 +1,16 @@
 import { GetStaticProps } from 'next';
 
 import IdentityCard from '../components/IdentityCard';
+import TopNavigation from '../components/TopNavigation';
 import Flex from '../shared/Flex';
 import SEO from '../components/SEO';
 
 export default function Home({ title }) {
   return (
     <>
-      <SEO />
-      <Flex>
+      <SEO title={title} />
+      <TopNavigation />
+      <Flex maxWidth="1024px" margin="auto" mt="64px">
         <IdentityCard />
       </Flex>
     </>
@@ -20,7 +22,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      title: meta.site_info.title,
+      title: `Home - ${meta.site_info.title}`,
     },
   };
 };
