@@ -1,16 +1,20 @@
 import { GetStaticProps } from 'next';
 
+// shared
+import Flex from '../shared/Flex';
+
+// components
 import IdentityCard from '../components/IdentityCard';
 import TopNavigation from '../components/TopNavigation';
-import Flex from '../shared/Flex';
 import SEO from '../components/SEO';
 
 export default function Home({ title }) {
+  const maxWidth = ['100%', '100%', '720px'];
   return (
     <>
       <SEO title={title} />
-      <TopNavigation />
-      <Flex maxWidth="1024px" margin="auto" mt="64px">
+      <TopNavigation maxWidth={maxWidth} />
+      <Flex maxWidth={maxWidth} margin="auto" mt="64px" flexDirection="column">
         <IdentityCard />
       </Flex>
     </>

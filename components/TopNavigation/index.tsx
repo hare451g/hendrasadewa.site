@@ -1,4 +1,5 @@
 import { Home, HardDrive, Info } from 'react-feather';
+import Link from 'next/link';
 
 // Shared Components
 import Avatar from '../../shared/Avatar';
@@ -8,44 +9,46 @@ import Flex from '../../shared/Flex';
 
 // Styled - Components
 import Bar from './Bar';
-import Link from './Link';
+import NavItem from './NavItem';
 import Navigation from './Navigation';
 
-const TopNavigation: React.SFC = () => (
+type TopNavigationPropsType = {
+  maxWidth: Array<string>;
+};
+
+const TopNavigation: React.SFC<TopNavigationPropsType> = ({ maxWidth }) => (
   <Bar>
     <Flex
       justifyContent="space-between"
       alignItems="center"
       m="auto"
-      maxWidth={['100%', '100%', '1024px']}
+      maxWidth={maxWidth}
     >
-      <Link href="/">
-        <Flex alignItems="center" ml="16px">
-          <Avatar src="/img/logo.svg" type="square" size="sm" />
-          <Text fontSize={2} fontWeight="bold" ml="16px">
-            {meta.identity.first_name} {meta.identity.last_name}
-          </Text>
-        </Flex>
-      </Link>
+      <Flex alignItems="center" ml="16px">
+        <Avatar src="/img/logo.svg" type="square" size="sm" />
+        <Text fontSize={2} fontWeight="bold" ml="16px">
+          {meta.identity.first_name} {meta.identity.last_name}
+        </Text>
+      </Flex>
 
       <Flex alignItems="center" mr="16px">
         <Navigation>
           <ul>
-            <li>
+            <NavItem>
               <Link href="/">
                 <Home size={18} />
               </Link>
-            </li>
-            <li>
+            </NavItem>
+            <NavItem>
               <Link href="/blog">
                 <HardDrive size={18} />
               </Link>
-            </li>
-            <li>
+            </NavItem>
+            <NavItem>
               <Link href="/about">
                 <Info size={18} />
               </Link>
-            </li>
+            </NavItem>
           </ul>
         </Navigation>
       </Flex>

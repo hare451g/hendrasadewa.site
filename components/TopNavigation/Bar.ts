@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-import Flex from '../../shared/Flex';
+import styled from 'styled-components';
 
 const Bar = styled.div`
   width: 100%;

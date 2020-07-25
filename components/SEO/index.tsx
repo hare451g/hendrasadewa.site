@@ -19,19 +19,46 @@ const SEO: React.SFC<SEOProps> = ({
 }) => (
   <Head>
     <title>{title}</title>
+    {/* Manifest */}
+    <link rel="manifest" href="/site.webmanifest" />
+
+    {/* FavIcon */}
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon-16x16.png"
+    />
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5" />
     {/* Browser Meta */}
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta httpEquiv="x-ua-compatible" content="ie=edge" />
     <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="theme-color" content={lightColors.brand.primary} />
+    {/* Theme colors Meta */}
+    <meta name="theme-color" content={lightColors.background.body} />
+    <meta
+      name="msapplication-TileColor"
+      content={lightColors.background.body}
+    />
     <meta
       name="msapplication-navbutton-color"
-      content={lightColors.brand.primary}
+      content={lightColors.background.body}
     />
     <meta
       name="apple-mobile-web-app-status-bar-style"
-      content={lightColors.brand.primary}
+      content={lightColors.background.body}
     />
     {/* Search Engine Metas */}
     <meta name="description" content={descriptions} />
@@ -61,14 +88,6 @@ const SEO: React.SFC<SEOProps> = ({
     <meta property="article:author" content="" />
     <meta property="article:publisher" content="" />
     <meta property="article:section" content="" />
-    {/* FavIcon */}
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#fefefe" />
-    <meta name="theme-color" content="#ffffff" />
   </Head>
 );
 
