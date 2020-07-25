@@ -10,7 +10,7 @@ export type Typography = {
   fontSize: Array<number>;
 };
 
-const typography = {
+const typography: Typography = {
   fontFamily: {
     primary: fontFamily.primary,
     monospace: fontFamily.monospace,
