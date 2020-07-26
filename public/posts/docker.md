@@ -2,8 +2,13 @@
 title: Install Docker di Ubuntu 18.04 LTS
 date: '2020-03-21'
 description: Cara install Docker di ubuntu 18.04 dengan mudah melalui beberapa perintah sederhana.
-heroImage: https://media.giphy.com/media/jYjA6fHBfAZvq/giphy.gif
+heroImage: https://images.unsplash.com/photo-1494412519320-aa613dfb7738?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
+photographer: chuttersnap
+unsplashAccount: chuttersnap
 series: docker
+seasonTitle: installations
+season: 1
+episode: 2
 isPublished: true
 ---
 
