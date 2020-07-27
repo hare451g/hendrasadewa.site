@@ -22,14 +22,17 @@ const PushEventCard: React.SFC<PropsTypes> = ({
   <EventCard index={index} createdAt={createdAt}>
     <Flex flexDirection="column">
       <Text>
-        <a href={actor.url}>{actor.login}</a> pushed new update to{' '}
-        <a href={repo.url}>{repo.name}</a>
+        <a href={`https://github.com/${actor.login}`}>{actor.login}</a> pushed
+        new update to{' '}
+        <a href={`https://github.com/${repo.name}`}>{repo.name}</a>
       </Text>
       <ul>
-        {payload.commits.map(({ message, sha, url }) => (
+        {payload.commits.map(({ message, sha }) => (
           <li key={sha}>
-            <a href={url}>{sha.substr(0, 8)}</a> -{' '}
-            <Text py="16px">{message}</Text>
+            <a href={`https://github.com/${repo.name}/commits/${sha}`}>
+              {sha.substr(0, 8)}
+            </a>{' '}
+            - <Text py="16px">{message}</Text>
           </li>
         ))}
       </ul>

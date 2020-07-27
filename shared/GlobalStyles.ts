@@ -25,6 +25,29 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
   }
+  ${({
+    theme: {
+      colors,
+      typography: { fontFamily },
+    },
+  }) => css`
+    a {
+      font-family: ${fontFamily.monospace};
+      color: ${colors.text.body};
+      text-decoration-color: ${colors.brand.primary};
+      transition: 0.2s;
+
+      :visited {
+        text-decoration-color: ${colors.brand.secondary};
+      }
+
+      :hover {
+        font-weight: bold;
+        color: ${colors.all.darkGray4};
+        text-decoration-color: ${colors.brand.secondary};
+      }
+    }
+  `}
   
 `;
 

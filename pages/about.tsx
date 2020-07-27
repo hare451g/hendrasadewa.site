@@ -14,7 +14,7 @@ import TopNavigation from '../components/TopNavigation';
 import SEO from '../components/SEO';
 import { GitHub } from 'react-feather';
 
-export default function Home({ title }) {
+export default function About({ title, githubUsername }) {
   const maxWidth = ['100%', '100%', '720px'];
   return (
     <>
@@ -22,6 +22,11 @@ export default function Home({ title }) {
       <TopNavigation maxWidth={maxWidth} />
       <Flex maxWidth={maxWidth} margin="auto" mt="64px" flexDirection="column">
         <IdentityCard />
+        <Text fontSize="32px" fontWeight="700" mt="42px">
+          <GitHub /> GitHub Activities
+        </Text>
+        <Divider width="100%" />
+        <GitHubActivities username={githubUsername} />
       </Flex>
     </>
   );
@@ -32,7 +37,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      title: `Home - ${meta.site_info.title}`,
+      title: `About - ${meta.site_info.title}`,
+      githubUsername: meta.social_media.github,
     },
   };
 };

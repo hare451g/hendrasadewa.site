@@ -20,8 +20,9 @@ const CreateEventCard: React.SFC<PropsType> = ({
 }) => (
   <EventCard index={index} createdAt={createdAt}>
     <Text>
-      <a href={actor.url}>{actor.login}</a> created a new {payload.ref_type}{' '}
-      <b>{payload.ref}</b> <a href={repo.url}>{repo.name}</a>
+      <a href={`https://github.com/${actor.login}`}>{actor.login}</a> created a
+      new {payload.ref_type} <b>{payload.ref}</b>{' '}
+      <a href={`https://github.com/${repo.name}`}>{repo.name}</a>
     </Text>
   </EventCard>
 );

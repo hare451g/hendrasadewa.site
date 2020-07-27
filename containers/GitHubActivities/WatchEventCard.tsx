@@ -18,8 +18,8 @@ const WatchEventCard: React.SFC<PropsTypes> = ({
 }) => (
   <EventCard index={index} createdAt={createdAt}>
     <Text>
-      <a href={actor.url}>{actor.login}</a> watched{' '}
-      <a href={repo.url}>{repo.name}</a>
+      <a href={`https://github.com/${actor.login}`}>{actor.login}</a> watched{' '}
+      <a href={`https://github.com/${repo.name}`}>{repo.name}</a>
     </Text>
   </EventCard>
 );

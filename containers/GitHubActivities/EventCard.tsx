@@ -1,3 +1,4 @@
+import { Calendar, Clock } from 'react-feather';
 import format from 'date-fns/format';
 
 import Flex from '../../shared/Flex';
@@ -22,13 +23,13 @@ const EventCard: React.SFC<PropsType> = ({ index, createdAt, children }) => (
       borderRightWidth="2px"
       borderRightStyle="solid"
       pr="8px"
-      mr="8px"
+      mr="16px"
     >
-      <Text fontFamily="monospace">
-        {format(new Date(createdAt), 'dd/mm/yyyy')}{' '}
+      <Text fontFamily="monospace" mb="2px">
+        {format(new Date(createdAt), 'dd/mm/yyyy')} <Calendar size="14px" />
       </Text>
       <Text fontFamily="monospace" textAlign="end">
-        {format(new Date(createdAt), 'H:I')}{' '}
+        {format(new Date(createdAt), 'H:I')} <Clock size="14px" />
       </Text>
     </Flex>
     {children}

@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Loader, GitCommit, Eye } from 'react-feather';
 
-import Flex from '../../shared/Flex';
 import Text from '../../shared/Text';
-import Avatar from '../../shared/Avatar';
+
 import { GHActivity } from './types';
 import requestActivities from './services';
 import PushEventCard from './PushEventCard';
