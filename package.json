@@ -8,8 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "date-fns": "^2.15.0",
+    "firebase-admin": "^9.0.0",
     "front-matter": "^4.0.2",
     "next": "9.4.4",
+    "ramda": "^0.27.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-feather": "^2.0.8",

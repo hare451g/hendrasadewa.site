@@ -7,12 +7,9 @@ import Flex from '../shared/Flex';
 import IdentityCard from '../components/IdentityCard';
 import TopNavigation from '../components/TopNavigation';
 import SEO from '../components/SEO';
+import GitHubActivities from '../containers/GitHubActivities';
 
-// utils
-import { readMarkdownPosts } from '../utils/files';
-import ActivityCard from '../components/ActivityCard';
-
-export default function Home({ title, files }) {
+export default function Home({ title, githubUsername }) {
   const maxWidth = ['100%', '100%', '720px'];
   return (
     <>
@@ -20,13 +17,7 @@ export default function Home({ title, files }) {
       <TopNavigation maxWidth={maxWidth} />
       <Flex maxWidth={maxWidth} margin="auto" mt="64px" flexDirection="column">
         <IdentityCard />
-        {files.map((attributes) => (
-          <ActivityCard
-            heroImage={attributes.heroImage.src}
-            title={attributes.title}
-            date={attributes.date}
-          />
-        ))}
+        <GitHubActivities username={githubUsername} />
       </Flex>
     </>
   );
@@ -34,12 +25,11 @@ export default function Home({ title, files }) {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const meta = await import('../constants/meta.json');
-  const files = readMarkdownPosts(`${process.cwd()}/public/posts`);
 
   return {
     props: {
       title: `Home - ${meta.site_info.title}`,
-      files,
+      githubUsername: meta.social_media.github,
     },
   };
 };
