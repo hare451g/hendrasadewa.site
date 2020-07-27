@@ -1,13 +1,13 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Loader, GitCommit, Eye } from 'react-feather';
+
 import Flex from '../../shared/Flex';
 import Text from '../../shared/Text';
-import { Loader, GitCommit, Eye } from 'react-feather';
+import Avatar from '../../shared/Avatar';
 import { GHActivity, PushType } from './types';
 import requestActivities from './services';
-import Avatar from '../../shared/Avatar';
-import Link from 'next/link';
 import PushEventCard from './PushEventCard';
+import WatchEventCard from './WatchEventCard';
 
 type GHActivitiesPropsType = {
   username: string;
@@ -49,37 +49,35 @@ const GitHubActivities: React.FC<GHActivitiesPropsType> = ({ username }) => {
   }
 
   if (activities.length > 0) {
-    return activities.map((act, index) => {
-      if (act.type.toString() === 'WatchEvent') {
-        return (
-          <Flex
-            key={`event-${index + 1}`}
-            flexDirection="row"
-            alignItems="center"
-            py="8px"
-          >
-            <Eye />
-            <Text ml="16px">
-              <a href={act.actor.url}>{act.actor.login}</a> watched{' '}
-              <a href={act.repo.url}>{act.repo.name}</a>
-            </Text>
-          </Flex>
-        );
-      }
+    return (
+      <>
+        {activities.map((act, index) => {
+          if (act.type.toString() === 'WatchEvent') {
+            return (
+              <WatchEventCard
+                actor={act.actor}
+                repo={act.repo}
+                index={index}
+                createdAt={act.created_at}
+              />
+            );
+          }
 
-      if (act.type.toString() === 'PushEvent') {
-        return (
-          <PushEventCard
-            actor={act.actor}
-            payload={act.payload}
-            repo={act.repo}
-            index={index}
-            createdAt={act.created_at}
-          />
-        );
-      }
-      return <Text>Some act</Text>;
-    });
+          if (act.type.toString() === 'PushEvent') {
+            return (
+              <PushEventCard
+                actor={act.actor}
+                payload={act.payload}
+                repo={act.repo}
+                index={index}
+                createdAt={act.created_at}
+              />
+            );
+          }
+          return <Text>{act.type}</Text>;
+        })}
+      </>
+    );
   }
 
   return (
