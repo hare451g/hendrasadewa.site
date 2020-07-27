@@ -8,6 +8,7 @@ import { GHActivity, PushType } from './types';
 import requestActivities from './services';
 import PushEventCard from './PushEventCard';
 import WatchEventCard from './WatchEventCard';
+import CreateEventCard from './CreateEventCard';
 
 type GHActivitiesPropsType = {
   username: string;
@@ -74,6 +75,19 @@ const GitHubActivities: React.FC<GHActivitiesPropsType> = ({ username }) => {
               />
             );
           }
+
+          if (act.type.toString() === 'CreateEvent') {
+            return (
+              <CreateEventCard
+                actor={act.actor}
+                payload={act.payload}
+                repo={act.repo}
+                index={index}
+                createdAt={act.created_at}
+              />
+            );
+          }
+
           return <Text>{act.type}</Text>;
         })}
       </>

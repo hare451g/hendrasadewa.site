@@ -36,6 +36,14 @@ export type CommitType = {
   url: string;
 };
 
+export type CreateType = {
+  ref: string;
+  ref_type: string;
+  master_branch: string;
+  description: string;
+  pusher_type: string;
+};
+
 export type PushType = {
   push_id: number;
   size: number;
@@ -49,6 +57,7 @@ export type PushType = {
 enum events {
   PushEvent = 'PushEvent',
   WatchEvent = 'WatchEvent',
+  CreateEvent = 'CreateEvent',
 }
 
 export type GHActivity = {
@@ -58,5 +67,5 @@ export type GHActivity = {
   repo: RepoType;
   created_at: string;
   org?: ORGType;
-  payload: PushType | CommitType | WatchEventPayloadType | any;
+  payload: PushType | CommitType | WatchEventPayloadType | CreateType | any;
 };
