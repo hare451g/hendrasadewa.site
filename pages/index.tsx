@@ -2,17 +2,11 @@ import { GetStaticProps } from 'next';
 
 // shared
 import Flex from '../shared/Flex';
-import Divider from '../shared/Divider';
-import Text from '../shared/Text';
-
-// containers
-import GitHubActivities from '../containers/GitHubActivities';
 
 // components
 import IdentityCard from '../components/IdentityCard';
 import TopNavigation from '../components/TopNavigation';
 import SEO from '../components/SEO';
-import { GitHub } from 'react-feather';
 
 export default function Home({ title }) {
   const maxWidth = ['100%', '100%', '720px'];
