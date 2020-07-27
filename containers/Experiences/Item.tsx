@@ -1,6 +1,7 @@
 import Flex from '../../shared/Flex';
 import Text from '../../shared/Text';
 import { ExperienceType } from './types';
+import { format } from 'date-fns';
 
 type PropsTypes = ExperienceType;
 
@@ -20,7 +21,8 @@ const Item: React.SFC<PropsTypes> = ({
       width="25%"
     >
       <Text>
-        {dateJoined} - {dateDepature || 'Present'}
+        {format(new Date(dateJoined), 'MMM yyyy')} -{' '}
+        {dateDepature ? format(new Date(), 'MMM yyyy') : 'Present'}
       </Text>
     </Flex>
     <Flex flexDirection="column" width="60%">

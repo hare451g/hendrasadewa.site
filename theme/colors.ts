@@ -21,6 +21,7 @@ enum colors {
   lightGray4 = 'rgb(209,209,214)',
   lightGray5 = 'rgb(229,229,234)',
   lightGray6 = 'rgb(242,242,247)',
+  lightGray7 = 'rgb(250,250,250)',
   darkGray = 'rgb(142,142,147)',
   darkGray2 = 'rgb(99,99,102)',
   darkGray3 = 'rgb(72,72,74)',
@@ -60,7 +61,7 @@ export type ThemeColorsKeys = keyof ThemeColors;
 export const lightColors: ThemeColors = {
   all: colors,
   background: {
-    body: colors.lightGray6,
+    body: colors.lightGray7,
     border: colors.lightGray3,
   },
   text: {

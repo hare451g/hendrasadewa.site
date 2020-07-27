@@ -41,12 +41,34 @@
     "facebook": "hendra.sadewa.16",
     "facebook_url": "https://www.facebook.com/hendra.sadewa.16"
   },
+  "skills": {
+    "specializations": [
+      {
+        "name": "Modern Web-Application Development",
+        "descriptions": "Using React JS or MERN stack to deliver business driven web-based application with solid, tested and scalable architecture design."
+      },
+      {
+        "name": "JavaScript / TypeScript",
+        "descriptions": "Ready to deliver clean, linted, error-safe, scalabe and testable code, with functional programming paradigm."
+      }
+    ],
+    "keywords": [
+      "Modern JavaScript (ES6)",
+      "MERN Stack",
+      "Docker",
+      "React-Native",
+      "CSS + SASS",
+      "CSS in JS",
+      "Gatsby",
+      "Git"
+    ]
+  },
   "experiences": {
     "current": {
       "role": "Front-end Developer",
       "company": "Stockbit",
       "date_joined": "2020-06-02",
-      "date_depature": null,
+      "date_departure": null,
       "description": "Developing and maintain stockbit web apps"
     },
     "past": [
@@ -54,35 +76,35 @@
         "role": "Front-end Developer",
         "company": "Hara / Dattabot",
         "date_joined": "2018-05-01",
-        "date_depature": "2020-05-01",
+        "date_departure": "2020-05-01",
         "description": "Building hara for business platform to monitor loan applications, land ownership, and risk management for micro-loan (KUR) product. Used by BNI & BTPNS for massive data procesing"
       },
       {
         "role": "Fullstack Developer",
         "company": "AN-TAR / Lyto",
         "date_joined": "2017-06-01",
-        "date_depature": "2018-05-01",
+        "date_departure": "2018-05-01",
         "description": "AN-TAR is a lyto sister company that provide couriers for buying goods and foods especially for high rise building. Building entire AN-TAR ecosystem ( Mobile apps: courier and client, Backend Services, CI/CD, CMS Dashboard)."
       },
       {
         "role": "Web Developer / R&D",
         "company": "Lyto",
         "date_joined": "2017-03-01",
-        "date_depature": "2017-06-01",
+        "date_departure": "2017-06-01",
         "description": "Building several Lyto’s and Gravindo’s game sites, providing new features for their websites, also integrate and automate internal lyto advertising services and reports."
       },
       {
         "role": "Software Engineer",
         "company": "Telkom DDS - Mediatron",
         "date_joined": "2016-10-01",
-        "date_depature": "2017-03-01",
+        "date_departure": "2017-03-01",
         "description": "Dedicated to support product R&D for DDS and HEX unit. Building IoT platform, and it implementation via mobile apps."
       },
       {
         "role": "Lab Assistant",
         "company": "Universitas Gunadarma - IT Laboratory",
         "date_joined": "2014-04-01",
-        "date_depature": "2016-09-01",
+        "date_departure": "2016-09-01",
         "description": "Teaching about programming, software development, maintain laboratory assets, and developing IT laboratory Apps (CALAS)"
       }
     ]
