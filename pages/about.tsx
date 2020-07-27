@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import { GitHub, Briefcase } from 'react-feather';
 
 // shared
 import Flex from '../shared/Flex';
@@ -12,9 +13,11 @@ import GitHubActivities from '../containers/GitHubActivities';
 import IdentityCard from '../components/IdentityCard';
 import TopNavigation from '../components/TopNavigation';
 import SEO from '../components/SEO';
-import { GitHub } from 'react-feather';
 
-export default function About({ title, githubUsername }) {
+// containers
+import Experiences from '../containers/Experiences';
+
+export default function About({ title, githubUsername, experiences }) {
   const maxWidth = ['100%', '100%', '720px'];
   return (
     <>
@@ -22,11 +25,24 @@ export default function About({ title, githubUsername }) {
       <TopNavigation maxWidth={maxWidth} />
       <Flex maxWidth={maxWidth} margin="auto" mt="64px" flexDirection="column">
         <IdentityCard />
-        <Text fontSize="32px" fontWeight="700" mt="42px">
-          <GitHub /> GitHub Activities
-        </Text>
-        <Divider width="100%" />
-        <GitHubActivities username={githubUsername} />
+        <Flex mt="42px">
+          <article>
+            <section>
+              <Text fontSize="32px" fontWeight="700" mt="42px">
+                <Briefcase /> Working Experiences
+              </Text>
+              <Divider width="100%" />
+              <Experiences experiences={experiences} />
+            </section>
+            <section>
+              <Text fontSize="32px" fontWeight="700" mt="42px">
+                <GitHub /> GitHub Activities
+              </Text>
+              <Divider width="100%" />
+              <GitHubActivities username={githubUsername} />
+            </section>
+          </article>
+        </Flex>
       </Flex>
     </>
   );
@@ -39,6 +55,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       title: `About - ${meta.site_info.title}`,
       githubUsername: meta.social_media.github,
+      experiences: meta.experiences,
     },
   };
 };
