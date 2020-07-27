@@ -1,11 +1,10 @@
-import format from 'date-fns/format';
 import Flex from '../../shared/Flex';
 import Text from '../../shared/Text';
 
 import { ActorType, RepoType, PushType } from './types';
-import Divider from '../../shared/Divider';
+import EventCard from './EventCard';
 
-type PushEventCardPropsType = {
+type PropsTypes = {
   index: number;
   actor: ActorType;
   repo: RepoType;
@@ -13,34 +12,14 @@ type PushEventCardPropsType = {
   createdAt: string;
 };
 
-const PushEventCard: React.SFC<PushEventCardPropsType> = ({
+const PushEventCard: React.SFC<PropsTypes> = ({
   index,
   actor,
   repo,
   payload,
   createdAt,
 }) => (
-  <Flex
-    key={`event-${index + 1}`}
-    flexDirection="row"
-    alignItems="flex-start"
-    py="8px"
-    mb="16px"
-  >
-    <Flex
-      flexDirection="column"
-      borderRightWidth="2px"
-      borderRightStyle="solid"
-      pr="8px"
-      mr="8px"
-    >
-      <Text fontFamily="monospace">
-        {format(new Date(createdAt), 'dd/mm/yyyy')}{' '}
-      </Text>
-      <Text fontFamily="monospace" textAlign="end">
-        {format(new Date(createdAt), 'H:I')}{' '}
-      </Text>
-    </Flex>
+  <EventCard index={index} createdAt={createdAt}>
     <Flex flexDirection="column">
       <Text>
         <a href={actor.url}>{actor.login}</a> pushed new update to{' '}
@@ -55,7 +34,7 @@ const PushEventCard: React.SFC<PushEventCardPropsType> = ({
         ))}
       </ul>
     </Flex>
-  </Flex>
+  </EventCard>
 );
 
 export default PushEventCard;
