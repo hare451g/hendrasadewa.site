@@ -25,7 +25,7 @@ const Item: React.SFC<PropsTypes> = ({
         {dateDepature ? format(new Date(), 'MMM yyyy') : 'Present'}
       </Text>
     </Flex>
-    <Flex flexDirection="column" width="60%">
+    <Flex flexDirection="column" width="75%">
       <Text fontWeight="600">{company}</Text>
       <Text mb="16px">{role}</Text>
       <Text>{description}</Text>
