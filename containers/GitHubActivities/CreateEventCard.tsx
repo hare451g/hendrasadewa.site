@@ -23,16 +23,25 @@ const CreateEventCard: React.SFC<PropsType> = ({
 }) => (
   <Flex
     key={`event-${index + 1}`}
-    flexDirection="column"
-    justifyContent="space-between"
+    flexDirection="row"
     alignItems="flex-start"
     py="8px"
     mb="16px"
   >
-    <Text fontFamily="monospace">
-      {format(new Date(createdAt), 'dd/mm/yyyy-H:I')}{' '}
-    </Text>
-    <Divider borderWidth="2px" width="100%" />
+    <Flex
+      flexDirection="column"
+      borderRightWidth="2px"
+      borderRightStyle="solid"
+      pr="8px"
+      mr="8px"
+    >
+      <Text fontFamily="monospace">
+        {format(new Date(createdAt), 'dd/mm/yyyy')}{' '}
+      </Text>
+      <Text fontFamily="monospace" textAlign="end">
+        {format(new Date(createdAt), 'H:I')}{' '}
+      </Text>
+    </Flex>
     <Text>
       <a href={actor.url}>{actor.login}</a> created a new {payload.ref_type}{' '}
       <b>{payload.ref}</b> <a href={repo.url}>{repo.name}</a>

@@ -1,5 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import {
+  BorderProps,
+  border,
   FlexboxProps,
   flexbox,
   SpaceProps,
@@ -8,10 +10,11 @@ import {
   layout,
 } from 'styled-system';
 
-type FlexProps = FlexboxProps & LayoutProps & SpaceProps;
+type FlexProps = BorderProps & FlexboxProps & LayoutProps & SpaceProps;
 
 const Flex: React.FC<FlexProps> = styled.div<FlexProps>`
   display: flex;
+  ${border}
   ${flexbox}
   ${space}
   ${layout}

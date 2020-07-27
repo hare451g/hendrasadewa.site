@@ -4,11 +4,14 @@ import { Loader, GitCommit, Eye } from 'react-feather';
 import Flex from '../../shared/Flex';
 import Text from '../../shared/Text';
 import Avatar from '../../shared/Avatar';
-import { GHActivity, PushType } from './types';
+import { GHActivity } from './types';
 import requestActivities from './services';
 import PushEventCard from './PushEventCard';
 import WatchEventCard from './WatchEventCard';
 import CreateEventCard from './CreateEventCard';
+import LoadingContents from './LoadingContents';
+import ErrorContents from './ErrorContents';
+import EmptyContent from './EmptyContent';
 
 type GHActivitiesPropsType = {
   username: string;
@@ -31,22 +34,11 @@ const GitHubActivities: React.FC<GHActivitiesPropsType> = ({ username }) => {
   }, []);
 
   if (error) {
-    return (
-      <Flex flexDirection="column">
-        <Text fontWeight="bold">An error Occured !</Text>
-        <Text>{error || 'Unknown Error'}</Text>
-      </Flex>
-    );
+    return <ErrorContents error={error} />;
   }
 
   if (loading) {
-    return (
-      <Flex flexDirection="column">
-        <Text fontWeight="bold">
-          <Loader /> Loading contents . . .
-        </Text>
-      </Flex>
-    );
+    return <LoadingContents />;
   }
 
   if (activities.length > 0) {
@@ -94,11 +86,7 @@ const GitHubActivities: React.FC<GHActivitiesPropsType> = ({ username }) => {
     );
   }
 
-  return (
-    <Flex flexDirection="column">
-      <Text fontWeight="bold">There's no activities recently</Text>
-    </Flex>
-  );
+  return <EmptyContent />;
 };
 
 export default GitHubActivities;

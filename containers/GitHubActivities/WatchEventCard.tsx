@@ -4,7 +4,7 @@ import Flex from '../../shared/Flex';
 import Text from '../../shared/Text';
 import Divider from '../../shared/Divider';
 
-import { ActorType, RepoType, WatchEventPayloadType } from './types';
+import { ActorType, RepoType } from './types';
 
 type WatchEventCardPropsType = {
   index: number;
@@ -21,16 +21,25 @@ const WatchEventCard: React.SFC<WatchEventCardPropsType> = ({
 }) => (
   <Flex
     key={`event-${index + 1}`}
-    flexDirection="column"
-    justifyContent="space-between"
+    flexDirection="row"
     alignItems="flex-start"
     py="8px"
     mb="16px"
   >
-    <Text fontFamily="monospace">
-      {format(new Date(createdAt), 'dd/mm/yyyy-H:I')}{' '}
-    </Text>
-    <Divider borderWidth="2px" width="100%" />
+    <Flex
+      flexDirection="column"
+      borderRightWidth="2px"
+      borderRightStyle="solid"
+      pr="8px"
+      mr="8px"
+    >
+      <Text fontFamily="monospace">
+        {format(new Date(createdAt), 'dd/mm/yyyy')}{' '}
+      </Text>
+      <Text fontFamily="monospace" textAlign="end">
+        {format(new Date(createdAt), 'H:I')}{' '}
+      </Text>
+    </Flex>
     <Text>
       <a href={actor.url}>{actor.login}</a> watched{' '}
       <a href={repo.url}>{repo.name}</a>

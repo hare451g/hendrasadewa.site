@@ -22,28 +22,39 @@ const PushEventCard: React.SFC<PushEventCardPropsType> = ({
 }) => (
   <Flex
     key={`event-${index + 1}`}
-    flexDirection="column"
-    justifyContent="space-between"
+    flexDirection="row"
     alignItems="flex-start"
     py="8px"
     mb="16px"
   >
-    <Text fontFamily="monospace">
-      {format(new Date(createdAt), 'dd/mm/yyyy-H:I')}{' '}
-    </Text>
-    <Divider borderWidth="2px" width="100%" />
-    <Text>
-      <a href={actor.url}>{actor.login}</a> pushed new update to{' '}
-      <a href={repo.url}>{repo.name}</a>
-    </Text>
-    <ul>
-      {payload.commits.map(({ message, sha, url }) => (
-        <li key={sha}>
-          <a href={url}>{sha.substr(0, 8)}</a> -{' '}
-          <Text py="16px">{message}</Text>
-        </li>
-      ))}
-    </ul>
+    <Flex
+      flexDirection="column"
+      borderRightWidth="2px"
+      borderRightStyle="solid"
+      pr="8px"
+      mr="8px"
+    >
+      <Text fontFamily="monospace">
+        {format(new Date(createdAt), 'dd/mm/yyyy')}{' '}
+      </Text>
+      <Text fontFamily="monospace" textAlign="end">
+        {format(new Date(createdAt), 'H:I')}{' '}
+      </Text>
+    </Flex>
+    <Flex flexDirection="column">
+      <Text>
+        <a href={actor.url}>{actor.login}</a> pushed new update to{' '}
+        <a href={repo.url}>{repo.name}</a>
+      </Text>
+      <ul>
+        {payload.commits.map(({ message, sha, url }) => (
+          <li key={sha}>
+            <a href={url}>{sha.substr(0, 8)}</a> -{' '}
+            <Text py="16px">{message}</Text>
+          </li>
+        ))}
+      </ul>
+    </Flex>
   </Flex>
 );
 
