@@ -56,9 +56,9 @@ const Button = styled.button<ButtonProps>(
     border: none;
     border-radius: 4px;
 
-    font-size: ${typography.sizes.body[0]};
-    font-family: ${typography.font.primary.src};
-    font-weight: ${typography.font.primary.weights[4]};
+    font-size: 16px;
+    font-family: ${typography.fontFamily.primary};
+    font-weight: bold;
 
     text-transform: uppercase;
 

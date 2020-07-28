@@ -2,12 +2,11 @@ import styled, { css } from 'styled-components';
 
 const Wrapper = styled.article(
   ({ theme: { colors, shadows, space, typography } }) => css`
-    font-family: ${typography.font.primary.src};
-    font-size: ${typography.sizes.body[1]}px;
+    font-family: ${typography.fontFamily.primary};
+    font-size: 16px;
     font-style: normal;
     font-weight: normal;
 
-    line-height: ${typography.lineHeights[1]};
     width: inherit;
 
     p {
@@ -21,7 +20,7 @@ const Wrapper = styled.article(
     h4,
     h5,
     h6 {
-      font-family: ${typography.font.primary.src};
+      font-family: ${typography.fontFamily.primary};
     }
 
     a {
